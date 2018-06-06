@@ -24,7 +24,7 @@ public class MyConsumer {
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         final KafkaConsumer<String, String> consumer = new KafkaConsumer(props);
-        consumer.subscribe(Arrays.asList("topic-test"), new ConsumerRebalanceListener() {
+        consumer.subscribe(Arrays.asList("my-topic"), new ConsumerRebalanceListener() {
             public void onPartitionsRevoked(Collection<TopicPartition> collection) {
             }
 
